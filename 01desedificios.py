@@ -5,10 +5,11 @@ alturas = list(map(int, input("").split()))
 
 alturas = [0]+alturas+[0]
 maximo = 0
+area = 0
 Pa = [0]
 Pi = [0]
 
-for i in range(1, N):
+for i in range(1, len(alturas)):
 	if alturas[i] > Pa[-1]:
 		Pa.append( alturas[i] )
 		Pi.append( i )
