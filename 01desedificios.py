@@ -9,7 +9,7 @@ area = 0
 Pa = [0]
 Pi = [0]
 
-for i in range(1, len(alturas)):
+for i in range(1, N+2):
 	if alturas[i] > Pa[-1]:
 		Pa.append( alturas[i] )
 		Pi.append( i )
