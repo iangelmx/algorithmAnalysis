@@ -1,7 +1,9 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-N = int(input(""))
-alturas = list(map(int, input("").split()))
+from datetime import datetime
+startTime = datetime.now()
+#N = int(input(""))
+N = eval(raw_input())
+#alturas = list(map(int, input("").split()))
+alturas = map(int, raw_input().split())
 
 alturas = [0]+alturas+[0]
 maximo = 0
@@ -21,4 +23,5 @@ for i in range(1, N+2):
 			Pa.append( alturas[i] )
 		else:
 			Pi.pop()
-print(maximo)
+print maximo
+print datetime.now() - startTime 
