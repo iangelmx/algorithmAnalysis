@@ -7,7 +7,7 @@ archivo = open("salida2.csv", "a+")
 
 startTime = datetime.now()
 def mergeSort(alist):
-    #print("Splitting ",alist)
+    print("Splitting ",alist)
     if len(alist)>1:
         mid = len(alist)//2
         lefthalf = alist[:mid]
@@ -16,26 +16,26 @@ def mergeSort(alist):
         mergeSort(lefthalf)
         mergeSort(righthalf)
 
-        i=0
-        j=0
+        a=0
+        b=0
         k=0
-        while i < len(lefthalf) and j < len(righthalf):
-            if lefthalf[i] < righthalf[j]:
-                alist[k]=lefthalf[i]
-                i=i+1
+        while a < len(lefthalf) and b < len(righthalf):
+            if lefthalf[a] < righthalf[b]:
+                alist[k]=lefthalf[a]
+                a=a+1
             else:
-                alist[k]=righthalf[j]
-                j=j+1
+                alist[k]=righthalf[b]
+                b=b+1
             k=k+1
 
-        while i < len(lefthalf):
-            alist[k]=lefthalf[i]
-            i=i+1
+        while a < len(lefthalf):
+            alist[k]=lefthalf[a]
+            a=a+1
             k=k+1
 
-        while j < len(righthalf):
-            alist[k]=righthalf[j]
-            j=j+1
+        while b < len(righthalf):
+            alist[k]=righthalf[b]
+            b=b+1
             k=k+1
 
 alist = []
