@@ -10,7 +10,9 @@ def divideArreglo(arr):
 
 	divideArreglo(mitadIzq)
 	divideArreglo(mitadDer)
-	
+	merge(arr, mitadIzq, mitadDer)
+
+def merge(arr, mitadIzq, mitadDer):
 	a=0
 	b=0
 	k=0
