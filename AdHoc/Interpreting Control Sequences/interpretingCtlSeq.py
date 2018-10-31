@@ -24,7 +24,11 @@ def eraseToRight():
     #print("Vino a eraseToRight")
     global matrizLineal, x, y
     cursorPosition = (y*10) + x
-    matrizLineal[ cursorPosition ] = " " 
+    matrizLineal[ cursorPosition ] = " "
+    aux = matrizLineal[:cursorPosition]
+    auxFin = matrizLineal[cursorPosition: ]
+    matrizLineal = aux.extend(auxFin)
+    matrizLineal.extend([' '])
 
 
 def goToOrigin():
