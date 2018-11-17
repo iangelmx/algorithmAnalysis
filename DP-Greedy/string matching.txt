@@ -1,0 +1,12 @@
+empate de Cadenas
+string matching
+
+Por fuerza bruta:
+	input: w = aaaaabbccab
+
+	Si queremos hacer el matching de cadenas nos tardaríamos 
+	O (|w| |p|)... en el peor de los casos, si |p| es = a |w| 
+	O ( n^2 )
+
+Una manera mejor de hacerse es con autómatas
+	Donde el tiempo podría ser lineal.
