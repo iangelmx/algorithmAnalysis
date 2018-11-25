@@ -1,0 +1,7 @@
+Si coin collector fuera Greedy:
+Con divisiones.
+K/20 = INT + Residuo
+
+Ver si el residuo 
+
+Ver fotos en móvil
