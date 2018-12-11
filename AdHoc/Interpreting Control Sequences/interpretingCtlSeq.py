@@ -11,7 +11,7 @@ def clearScreen():
     matrizLineal = [" "] * 100
 
 def moveOneRow(direction):
-    print("Movió Row a la", direction)
+    #print("Movió Row a la", direction)
     global y
     if direction == "up":
         if y > 0:
@@ -23,12 +23,21 @@ def moveOneRow(direction):
 def eraseToRight():
     #print("Vino a eraseToRight")
     global matrizLineal, x, y
+    #print(matrizLineal)
     cursorPosition = (y*10) + x
-    matrizLineal[ cursorPosition ] = " "
+    finLinea = (cursorPosition//10)*10 +10
+    dif = finLinea - cursorPosition
+    #matrizLineal[ cursorPosition ] = " "
+    #print("cursorPos->",cursorPosition)
+    #print("finLinea->",finLinea)
     aux = matrizLineal[:cursorPosition]
-    auxFin = matrizLineal[cursorPosition: ]
-    matrizLineal = aux.extend(auxFin)
-    matrizLineal.extend([' '])
+    #auxFin = matrizLineal[cursorPosition+1: ] #<-Anterior
+    auxFin = matrizLineal[finLinea: ]
+    aux.extend(auxFin)
+    matrizLineal = aux
+    matrizLineal.extend([' ']*dif)
+    matrizLineal = matrizLineal
+    #printMatrix()
 
 
 def goToOrigin():
@@ -67,7 +76,7 @@ def moveToXY(row, column):
     global x, y
     x = column
     y = row
-    print("Movió el cursor Y,X a: (", y,",", x,")")
+    #print("Movió el cursor Y,X a: (", y,",", x,")")
 
 def printMatrix():
     global matrizLineal
@@ -95,15 +104,15 @@ def writeToMatrix(char):
     global matrizLineal, x, y, writeMode
 
     cursorPosition = (y*10) + x
-    print("current (",y,",",x,")")
+    #print("current (",y,",",x,")")
     if writeMode == 'overwrite':
         #print("escribirá Estándo en overwrite")
         #print("posición: ",cursorPosition)
         matrizLineal[ cursorPosition ] = char
-        printMatrix()    
+        #printMatrix()    
         changeCoordinates(trace=True)
     else :
-        print("Escribirá Estando en insert")
+        #print("Escribirá Estando en insert")
         startString = matrizLineal[ :cursorPosition]
         #print("startString",startString)
         saveEndString = matrizLineal[ cursorPosition: ] #Guarda a partir de la pos actual hasta el final
@@ -113,7 +122,7 @@ def writeToMatrix(char):
         startString.extend( saveEndString[:-1] )
         matrizLineal = startString
         #print("matrizLineal",matrizLineal)
-        printMatrix()
+        #printMatrix()
         changeCoordinates(trace=True)
         #matrizLineal[ cursorPosition ] = char #Escribe en la posición
         #matrizLineal[ cursorPosition+1 ] = saveEndString[:-1] #Escribe después de la 
@@ -135,14 +144,17 @@ def main():
             y=0
             N = int(N)
             writeMode = "overwrite"
-            for c in range( N ): #Va de 1 a N
+            #print("N", N)
+            for c in range( 0,N ): #Va de 1 a N
                 ###print("c->",c)
+                #print("Llegó aquí", c )
                 linea = input()
                 a=0
                 #print(linea)
                 #printMatrix()
                 #for a in range( 0, len(linea) ):
                 while a < len(linea):
+
                     ###print("char #"+str(a)+"->"+linea[a]+"<-")
                     if linea[a] == '^' and a < len(linea) - 1:
                         try:
@@ -172,12 +184,16 @@ def main():
                         writeToMatrix(linea[a])
                         a=a+1
                         #printMatrix()
+            #print(":v")
             N = input("")
+            #print("Leyó N", N, type(N), "Va a mandar a llamar a printMatrix")
             printMatrix()
+            #print("llamó a printMatrix")
         #print(matrizLineal)
         #print("")
     except Exception as ex:
         #printMatrix()
+        #print(matrizLineal)
         #print(ex)
         pass
 
