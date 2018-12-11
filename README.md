@@ -1,11 +1,11 @@
 # algorithmAnalysis
 Aquí yacen los programas de problemas de:
 
-*-Análisis de Algoritmos, de la **ESCOM** en el semestre 2019-A,
+*-Análisis de Algoritmos, de la **ESCOM** en el semestre 2019-A,*
 
-*-UVA OnlineJudge
+*-UVA OnlineJudge*
 
-*-OmegaUp
+*-OmegaUp*
 
 *-Hackerrank*
 
