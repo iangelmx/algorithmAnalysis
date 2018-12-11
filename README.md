@@ -3,11 +3,11 @@ Aquí yacen los programas de problemas de:
 
 *-Análisis de Algoritmos, de la **ESCOM** en el semestre 2019-A,
 
--UVA OnlineJudge
+*-UVA OnlineJudge
 
--OmegaUp
+*-OmegaUp
 
--Hackerrank*
+*-Hackerrank*
 
 Dichos programas nos fueron encomandados por el profesor Norman Saucedo. (Mis respetos a ese señor. Sí que se la sabe...)
 
